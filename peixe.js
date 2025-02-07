@@ -13,7 +13,7 @@ var config = {
 var game = new Phaser.Game(config);
 
 var nemo;
-var musica; 
+var musica;
 
 function preload() {
 
@@ -33,10 +33,12 @@ function preload() {
     this.load.image('nemo', 'assets/peixes/nemo.png')
 
     // Carregar música
-    this.load.audio("musica", "coloque o caminho da musica aq"); 
+    this.load.audio("musica", "assets/musica/musica_nemo.mp3");
 }
 
 function create() {
+
+
     // Adicionar fundo na tela
     this.add.image(400, 300, 'mar');
 
@@ -61,6 +63,12 @@ function create() {
 
     // Transformando a variável
     nemo.setFlip(true, false);
+
+    // Adicionando música
+    musica = this.sound.add("musica");
+    musica.play(); //da play 
+
+    this.input.setDefaultCursor("none");
 
 }
 
